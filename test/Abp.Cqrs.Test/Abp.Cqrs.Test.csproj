@@ -9,6 +9,6 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Abp.Cqrs\Abp.Cqrs.csproj" />
+    <ProjectReference Include="..\..\src\Abp.Cqrs\Abp.Cqrs.csproj" />
   </ItemGroup>
 </Project>

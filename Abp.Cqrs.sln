@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2043
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Cqrs", "Abp.Cqrs\Abp.Cqrs.csproj", "{15878239-BEB3-4E21-96DA-257B838083AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Cqrs", "src\Abp.Cqrs\Abp.Cqrs.csproj", "{15878239-BEB3-4E21-96DA-257B838083AE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5CE19EDE-1C8A-41F0-9B76-85FE0747D046}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Cqrs.Test", "Abp.Cqrs.Test\Abp.Cqrs.Test.csproj", "{6F2C7B67-E595-45E8-B220-2319BAE04F47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Cqrs.Test", "test\Abp.Cqrs.Test\Abp.Cqrs.Test.csproj", "{6F2C7B67-E595-45E8-B220-2319BAE04F47}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "soultions", "soultions", "{3A881EE0-A652-45CA-B9C5-49CF2960015C}"
 	ProjectSection(SolutionItems) = preProject
-		..\common.props = ..\common.props
+		common.props = common.props
 	EndProjectSection
 EndProject
 Global
