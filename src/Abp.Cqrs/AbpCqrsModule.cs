@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Abp.Dependency;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using Castle.MicroKernel.Registration;
@@ -32,20 +31,6 @@ namespace Abp.Cqrs
                 return enumerableType != null ? k.ResolveAll(enumerableType.GetGenericArguments()[0]) : k.Resolve(type);
             })));
             
-            /*this.IocManager.IocContainer.Register(Component.For<SingleInstanceFactory>().UsingFactoryMethod<SingleInstanceFactory>(k => t => k.Resolve(t)));
-            this.IocManager.IocContainer.Register(Component.For<MultiInstanceFactory>().UsingFactoryMethod<MultiInstanceFactory>(k => t => (IEnumerable<object>)k.ResolveAll(t)));*/
-
-            
-            /*
-
-            this.IocManager.IocContainer.Register(Component.For<SingleInstanceFactory>().UsingFactoryMethod<SingleInstanceFactory>(k => t => k.Resolve(t)));
-            this.IocManager.IocContainer.Register(Component.For<MultiInstanceFactory>().UsingFactoryMethod<MultiInstanceFactory>(k => t => (IEnumerable<object>)k.ResolveAll(t)));
-            
-            this.IocManager.IocContainer.Register(Component.For(typeof(IPipelineBehavior<,>)).ImplementedBy(typeof(RequestPreProcessorBehavior<,>)).NamedAutomatically("PreProcessorBehavior"));
-            this.IocManager.IocContainer.Register(Component.For(typeof(IPipelineBehavior<,>)).ImplementedBy(typeof(RequestPostProcessorBehavior<,>)).NamedAutomatically("PostProcessorBehavior"));
-            this.IocManager.IocContainer.Register(Component.For(typeof(IPipelineBehavior<,>)).ImplementedBy(typeof(GenericPipelineBehavior<,>)).NamedAutomatically("Pipeline"));
-            this.IocManager.IocContainer.Register(Component.For(typeof(IRequestPreProcessor<>)).ImplementedBy(typeof(GenericRequestPreProcessor<>)).NamedAutomatically("PreProcessor"));
-            this.IocManager.IocContainer.Register(Component.For(typeof(IRequestPostProcessor<,>)).ImplementedBy(typeof(GenericRequestPostProcessor<,>)).NamedAutomatically("PostProcessor"));*/
         }
 
         public override void Initialize()
@@ -64,27 +49,4 @@ namespace Abp.Cqrs
             
         }
     }
-
-    public static class IocManagerExtentions
-    {
-        public static void RegisterAssemblyCqrs<TModule>(this IIocManager iocmanager)
-            where TModule:AbpModule
-        {
-            
-            var container = iocmanager.IocContainer;
-            container.Register(
-                Classes.FromAssemblyContaining<TModule>()
-                    .BasedOn(typeof(IRequestHandler<,>))
-                    .WithServiceAllInterfaces()
-            );
-            
-            container.Register(
-                Classes.FromAssemblyContaining<TModule>()
-                    .BasedOn(typeof(INotificationHandler<>))
-                    .WithServiceAllInterfaces()
-            );
-            
-        }
-    }
-
 }
