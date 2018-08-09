@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Cqrs", "Abp.Cqrs\Abp.Cq
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5CE19EDE-1C8A-41F0-9B76-85FE0747D046}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abp.Cqrs.Test", "Abp.Cqrs.Test\Abp.Cqrs.Test.csproj", "{6F2C7B67-E595-45E8-B220-2319BAE04F47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Cqrs.Test", "Abp.Cqrs.Test\Abp.Cqrs.Test.csproj", "{6F2C7B67-E595-45E8-B220-2319BAE04F47}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "soultions", "soultions", "{3A881EE0-A652-45CA-B9C5-49CF2960015C}"
+	ProjectSection(SolutionItems) = preProject
+		..\common.props = ..\common.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

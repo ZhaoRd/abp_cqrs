@@ -1,0 +1,13 @@
+<Project>
+  <PropertyGroup>
+    <Version>3.8.2</Version>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://gitee.com/zhaord/abp_cqrs</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release' ">
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+  
+</Project>
